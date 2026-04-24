@@ -1,0 +1,204 @@
+/* ---------- external import ---------- */
+        @import "nav.css";
+
+        .account-glass-panel {
+            background: rgba(255, 250, 240, 0.7);
+            backdrop-filter: blur(6px);
+            border-radius: 1.5rem;
+            border: 1px solid rgba(230, 210, 170, 0.6);
+        }
+
+        .account-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1e3a5f, #2c4c3c, #8b5a2b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 1.8rem;
+        }
+
+        .account-class-selector-panel {
+            backdrop-filter: blur(8px);
+            border-radius: 3rem;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;             
+            border: 1px solid #e8e8e7;
+        }
+
+        .admit-button {
+            background: #2c5f8a;
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 0.65rem 1.3rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .admit-button:hover { background: #1e4a76; transform: translateY(-1px); }
+        .admit-button.account-secondary { background: #7c5e3a; }
+        .admit-button.account-success { background: #2f6b47; }
+        .admit-button.account-success:hover { background: #1f5438; }
+        .admit-button.account-warning { background: #b86b2c; }
+        .admit-button.account-warning:hover { background: #9a551f; }
+
+        input, select {
+            background: white;
+            border: 1px solid #d4d3d1;
+            border-radius: 50px;
+            padding: 0.7rem 1rem;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+        input:focus, select:focus { border-color: #2c5f8a; outline: none; box-shadow: 0 0 0 3px rgba(44,95,138,0.2); }
+
+        .account-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            margin-bottom: 1rem;
+        }
+        .account-form-group label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #090909;
+            letter-spacing: 0.3px;
+        }
+        .account-form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .account-toast-stack {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            pointer-events: none;
+            max-width: 360px;
+        }
+        .account-toast-message {
+            background: rgba(15, 25, 35, 0.94);
+            backdrop-filter: blur(16px);
+            border-radius: 2rem;
+            padding: 12px 20px;
+            color: #fef7e0;
+            font-weight: 500;
+            border-left: 6px solid #f5b042;
+            pointer-events: auto;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            animation: slideIn 0.25s ease;
+        }
+        .account-toast-success { border-left-color: #b6dff8; background: #1f3e30e6; }
+        .account-toast-error { border-left-color: #c24141; }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .account-flex-row { 
+            display: flex; 
+            gap: 0.8rem; 
+            flex-wrap: wrap; 
+            align-items: center; 
+            margin-bottom: 1rem; 
+            justify-content: space-between; 
+        }
+
+        .account-student-info-preview {
+            background: #fffaf0;
+            border-radius: 1rem;
+            padding: 1rem;
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+        .account-student-info-preview table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .account-student-info-preview th, 
+        .account-student-info-preview td {
+            border: 1px solid #e0d0b0;
+            padding: 8px;
+            text-align: left;
+            font-size: 0.8rem;
+        }
+        
+        .account-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 40%, #dcdfe4 70%, #f2e9e4 100%);
+            backdrop-filter: blur(12px);
+            border-radius: 50px;
+        }
+        .account-card-header {
+            padding: 1rem 1.5rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .account-card-body {
+            padding: 1rem;
+        }
+        
+        /* Teacher selector styling */
+        .teacher-selector-wrapper {
+            border-radius: 1.5rem;
+            padding: 0.8rem 1rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #999998;
+        }
+        .teacher-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        .teacher-option {
+            background: white;
+            border-radius: 3rem;
+            padding: 0.5rem 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 600;
+            color: #5a3e20;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .teacher-option.active {
+            background: #2c5f8a;
+            border-color: #2c5f8a;
+            color: white;
+            box-shadow: 0 2px 8px rgba(44,95,138,0.3);
+        }
+        .teacher-option:hover {
+            transform: translateY(-2px);
+            border-color: #b8860b;
+        }
+        .teacher-preview-img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: #f0e6d2;
+            padding: 2px;
+        }
